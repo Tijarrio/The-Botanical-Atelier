@@ -1,0 +1,9 @@
+{
+  "name": "The Botanical Atelier",
+  "description": "A high-end botanical mixology experience brand offering refined artisanship and liquid visual anthologies.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

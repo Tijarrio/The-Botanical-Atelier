@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-atelier-bg: #0C0D0C;
+  --color-atelier-cream: #F5F2ED;
+  --color-atelier-accent: #8FA18B; /* Sage green */
+  --color-atelier-gold: #C5A059;
+}
+
+@layer base {
+  body {
+    @apply bg-atelier-bg text-atelier-cream font-sans antialiased selection:bg-atelier-accent selection:text-atelier-bg;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  .font-display {
+    @apply font-display;
+  }
+}
+
+/* Custom Utilities for Editorial Look */
+@layer utilities {
+  .text-huge {
+    font-size: clamp(4rem, 15vw, 12rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+  
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-atelier-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-atelier-accent/30 rounded-full;
+}
